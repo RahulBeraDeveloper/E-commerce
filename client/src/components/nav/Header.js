@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { PersonPlus, Person } from "react-bootstrap-icons";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Header.css'; // Import custom CSS for hover effects
-
+import firebase from 'firebase';
 const Header = () => {
   const [current, setCurrent] = useState("home");
 
@@ -24,6 +24,7 @@ const Header = () => {
           <NavDropdown title="Username" id="basic-nav-dropdown" className="nav-link-custom">
             <NavDropdown.Item eventKey="setting:1">Option 1</NavDropdown.Item>
             <NavDropdown.Item eventKey="setting:2">Option 2</NavDropdown.Item>
+            <NavDropdown icon={<userOutlined/>} >Logout </NavDropdown>
           </NavDropdown>
         </Nav>
         <Nav className="ms-auto" activeKey={current}>
